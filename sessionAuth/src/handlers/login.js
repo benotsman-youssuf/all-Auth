@@ -4,7 +4,29 @@ export const loginHnadler = (req,res) =>{
   }
 
   res.setHeader('Content-Type', 'text/html')
-  res.write(`
+  res.send(`
+      <style>
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 300px;
+          margin: 0 auto;
+        }
+        input {
+          margin-bottom: 10px;
+          padding: 10px;
+          font-size: 16px;
+        }
+        button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+        }
+      </style>
       <h1>Login</h1>
       <form method="post" action="/process-login">
         <input type="text" name="username" placeholder="Username" /> <br>
@@ -13,5 +35,4 @@ export const loginHnadler = (req,res) =>{
       </form>
     `);
 
-  res.end();
 }
